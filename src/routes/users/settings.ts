@@ -42,6 +42,7 @@ export const userSettingsRouter = makeRouter((app) => {
           applicationTheme: z.string().nullable().optional(),
           defaultSubtitleLanguage: z.string().nullable().optional(),
           proxyUrls: z.string().array().nullable().optional(),
+          febboxToken: z.string().nullable().optional(),
         }),
       },
     },
@@ -66,6 +67,7 @@ export const userSettingsRouter = makeRouter((app) => {
       if (body.applicationTheme !== undefined)
         settings.applicationTheme = body.applicationTheme;
       if (body.proxyUrls !== undefined) settings.proxyUrls = body.proxyUrls;
+      if (body.febboxToken !== undefined) settings.febboxToken = body.febboxToken;
 
       await em.persistAndFlush(settings);
       return formatUserSettings(settings);

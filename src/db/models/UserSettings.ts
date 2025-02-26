@@ -16,6 +16,9 @@ export class UserSettings {
 
   @Property({ name: 'proxy_urls', type: ArrayType, nullable: true })
   proxyUrls?: string[] | null;
+
+  @Property({ name: 'febbox_token', nullable: true })
+  febboxToken?: string | null;
 }
 
 export interface UserSettingsDTO {
@@ -24,6 +27,7 @@ export interface UserSettingsDTO {
   applicationLanguage?: string | null;
   defaultSubtitleLanguage?: string | null;
   proxyUrls?: string[] | null;
+  febboxToken?: string | null;
 }
 
 export function formatUserSettings(
@@ -35,5 +39,6 @@ export function formatUserSettings(
     applicationLanguage: userSettings.applicationLanguage,
     defaultSubtitleLanguage: userSettings.defaultSubtitleLanguage,
     proxyUrls: userSettings.proxyUrls,
+    febboxToken: userSettings.febboxToken,
   };
 }

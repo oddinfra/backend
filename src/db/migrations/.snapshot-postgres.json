@@ -492,6 +492,15 @@
           "primary": false,
           "nullable": true,
           "mappedType": "array"
+        },
+        "febbox_token": {
+          "name": "febbox_token",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "string"
         }
       },
       "name": "user_settings",
